@@ -1,6 +1,7 @@
 body {
     font-family: 'Arial', sans-serif;
 }
+
 .navbar {
     background-color: #343a40;
 }
@@ -12,20 +13,22 @@ body {
 .nav-link {
     font-size: 18px;
 }
+
 .home {
-    opacity: 0; 
+    opacity: 0;
     background-color: rgba(79, 79, 63, 0.716);
     padding-top: 50px;
     padding-bottom: 50px;
-    animation: text-appear 1s ease-out forwards; 
+    animation: text-appear 1s ease-out forwards;
     border-radius: 10px;
-    
+
 
 }
+
 .box {
     height: 300px;
     margin-bottom: 20px;
-    border: 1px solid #ccc; 
+    border: 1px solid #ccc;
 }
 
 .box img {
@@ -33,19 +36,23 @@ body {
     max-height: 100%;
     object-fit: contain;
 }
-#monitor{
+
+#monitor {
     width: 75%;
     height: 75%;
 }
-#tablet{
+
+#tablet {
     width: 75%;
     height: 75%;
 }
-#smartphone{
+
+#smartphone {
     width: 75%;
     height: 75%;
 }
-#earphones{
+
+#earphones {
     width: 75%;
     height: 75%;
 }
@@ -53,10 +60,11 @@ body {
 @keyframes text-appear {
     from {
         opacity: 0;
-        transform: translateX(20px); 
+        transform: translateX(20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
     }
-}   
+}

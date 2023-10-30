@@ -2,7 +2,8 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-family: 'Helvetica', sans-serif;
 }
 
@@ -18,66 +19,74 @@ h2, h3 {
     font-size: 18px;
 }
 
-#ceo-pic{
+#ceo-pic {
     width: 25%;
     height: 25%;
 }
-#manager-pic{
+
+#manager-pic {
     width: 25%;
     height: 25%;
 }
-#director-pic{
+
+#director-pic {
     width: 20%;
     height: 20%;
 }
-#janitor-pic{
+
+#janitor-pic {
     width: 20%;
     height: 20%;
 }
-#stakeholder-pic{
+
+#stakeholder-pic {
     width: 20%;
     height: 20%;
 }
-#stakeholder2-pic{
+
+#stakeholder2-pic {
     width: 25%;
     height: 25%;
 }
-#story{
+
+#story {
     display: flex;
-    
+
 }
-#mission{
+
+#mission {
     display: flex;
 }
 
 .about-us {
-    opacity: 0; 
+    opacity: 0;
     background-color: rgba(79, 79, 63, 0.716);
     padding-top: 50px;
     padding-bottom: 50px;
-    animation: text-appear 1s ease-out forwards; 
+    animation: text-appear 1s ease-out forwards;
     border-radius: 10px;
-    
+
 
 }
 
-.story-div{
+.story-div {
     background-color: rgba(255, 255, 255, 0.4);
-    font-size:150%
+    font-size: 150%
 }
-.mission-div{
+
+.mission-div {
     background-color: rgba(255, 255, 255, 0.4);
-    font-size:150%
+    font-size: 150%
 }
 
 @keyframes text-appear {
     from {
         opacity: 0;
-        transform: translateX(20px); 
+        transform: translateX(20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
     }
 }
-
