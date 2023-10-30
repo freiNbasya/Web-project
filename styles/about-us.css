@@ -1,0 +1,83 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+h2, h3 {
+    font-family: 'Helvetica', sans-serif;
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.nav-link {
+    font-size: 18px;
+}
+
+#ceo-pic{
+    width: 25%;
+    height: 25%;
+}
+#manager-pic{
+    width: 25%;
+    height: 25%;
+}
+#director-pic{
+    width: 20%;
+    height: 20%;
+}
+#janitor-pic{
+    width: 20%;
+    height: 20%;
+}
+#stakeholder-pic{
+    width: 20%;
+    height: 20%;
+}
+#stakeholder2-pic{
+    width: 25%;
+    height: 25%;
+}
+#story{
+    display: flex;
+    
+}
+#mission{
+    display: flex;
+}
+
+.about-us {
+    opacity: 0; 
+    background-color: rgba(79, 79, 63, 0.716);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    animation: text-appear 1s ease-out forwards; 
+    border-radius: 10px;
+    
+
+}
+
+.story-div{
+    background-color: rgba(255, 255, 255, 0.4);
+    font-size:150%
+}
+.mission-div{
+    background-color: rgba(255, 255, 255, 0.4);
+    font-size:150%
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 0;
+        transform: translateX(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
