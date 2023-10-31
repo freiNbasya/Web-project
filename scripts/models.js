@@ -1,147 +1,81 @@
 
 const showCategory = (category) => {
     const homePage = document.querySelector(".home").innerHTML;
+    const categories = {
+        TV: {
+            title: 'TV Models', items: [
+                { name: 'Cool model 1', imgSrc: 'images/tv.webp' },
+                { name: 'Cool model 2', imgSrc: 'images/tv.webp' },
+                { name: 'Cool model 3', imgSrc: 'images/tv.webp' }
+            ]
+        },
+        Smartphone: {
+            title: 'Smartphone Models', items: [
+                { name: 'Cool model 1', imgSrc: 'images/smartphone.webp', id: 'smartphone' },
+                { name: 'Cool model 2', imgSrc: 'images/smartphone.webp', id: 'smartphone' },
+                { name: 'Cool model 3', imgSrc: 'images/smartphone.webp', id: 'smartphone' }
+            ]
+        },
+        Tablets: {
+            title: 'Tablet Models', items: [
+                { name: 'Cool model 1', imgSrc: 'images/tablet.png', id: 'tablet' },
+                { name: 'Cool model 2', imgSrc: 'images/tablet.png', id: 'tablet' },
+                { name: 'Cool model 3', imgSrc: 'images/tablet.png', id: 'tablet' }
+            ]
+        },
+        Laptops: {
+            title: 'Laptop Models', items: [
+                { name: 'Cool model 1', imgSrc: 'images/laptops.png' },
+                { name: 'Cool model 2', imgSrc: 'images/laptops.png' },
+                { name: 'Cool model 3', imgSrc: 'images/laptops.png' }
+            ]
+        },
+        Monitors: {
+            title: 'Monitor Models', items: [
+                { name: 'Cool model 1', imgSrc: 'images/monitor.png', id: 'monitor' },
+                { name: 'Cool model 2', imgSrc: 'images/monitor.png', id: 'monitor' },
+                { name: 'Cool model 3', imgSrc: 'images/monitor.png', id: 'monitor' }
+            ]
+        },
+        Earphones: {
+            title: 'Earphones Models', items: [
+                { name: 'Cool model 1', imgSrc: 'images/earphones.png', id: 'earphones' },
+                { name: 'Cool model 2', imgSrc: 'images/earphones.png', id: 'earphones' },
+                { name: 'Cool model 3', imgSrc: 'images/earphones.png', id: 'earphones' }
+            ]
+        }
+
+    }
+
+    const getCategoryItems = (items) => {
+        let template = ''
+        items.forEach(item => template = template + `
+                    <div class="col-md-4">
+                          <div class="text-center box">
+                              <h3>${item.name}</h3>
+                              <img src=${item.imgSrc} class="img-fluid" id=${item.id}>
+                          </div>
+                 </div>
+                    `);
+        return template;
+    }
+    const getCategoryTemplate = (categoryData) => {
+        return `
+            <h2>${categoryData.title}</h2>
+            <div class="row justify-content-center">
+                ${getCategoryItems(categoryData.items)}
+            </div>
+        `;
+    }
 
     const categoryContent = {
-        TVs: `
-                <h2>TV Models</h2>
-                <div class="row justify-content-center">
-                    <div class="col-md-4">
-                        <div class="text-center box">
-                            <h3>Cool model 1</h3>
-                            <img src="images/tv.webp" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="text-center box">
-                            <h3>Cool model 2</h3>
-                            <img src="images/tv.webp" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="text-center box">
-                            <h3>Cool model 3</h3>
-                            <img src="images/tv.webp" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            `,
-        Smartphones: `
-                <h2>Smartphone Models</h2>
-                <div class="row justify-content-center">
-                    <div class="col-md-4">
-                        <div class="text-center box">
-                            <h3>Cool model 1</h3>
-                            <img src="images/smartphone.webp" class="img-fluid" id="smartphone">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="text-center box">
-                            <h3>Cool model 2</h3>
-                            <img src="images/smartphone.webp" class="img-fluid" id="smartphone">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="text-center box">
-                            <h3>Cool model 3</h3>
-                            <img src="images/smartphone.webp" class="img-fluid" id="smartphone">
-                        </div>
-                    </div>
-                </div>
-            `,
-        Tablets: `
-                <h2>Tablet Models</h2>
-                <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="text-center box">
-                        <h3>Cool model 1</h3>
-                        <img src="images/tablet.png" class="img-fluid" id="tablet">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center box">
-                        <h3>Cool model 2</h3>
-                        <img src="images/tablet.png" class="img-fluid" id="tablet">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center box">
-                        <h3>Cool model 3</h3>
-                        <img src="images/tablet.png" class="img-fluid" id="tablet">
-                    </div>
-                </div>
-            </div>
-            `,
-        Laptops: `
-                <h2>Laptop Models</h2>
-                <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="text-center box">
-                        <h3>Cool model 1</h3>
-                        <img src="images/laptops.png" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center box">
-                        <h3>Cool model 2</h3>
-                        <img src="images/laptops.png" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center box">
-                        <h3>Cool model 3</h3>
-                        <img src="images/laptops.png" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-            `,
-        Monitors: `
-                <h2>Monitor Models</h2>
-                <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="text-center box">
-                        <h3>Cool model 1</h3>
-                        <img src="images/monitor.png" class="img-fluid" id="monitor">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center box">
-                        <h3>Cool model 2</h3>
-                        <img src="images/monitor.png" class="img-fluid" id="monitor">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center box">
-                        <h3>Cool model 3</h3>
-                        <img src="images/monitor.png" class="img-fluid" id="monitor">
-                    </div>
-                </div>
-            </div>
-            `,
-        Earphones: `
-                <h2>Earphone Models</h2>
-                <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="text-center box">
-                        <h3>Cool model 1</h3>
-                        <img src="images/earphones.png" class="img-fluid" id="earphones">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center box">
-                        <h3>Cool model 2</h3>
-                        <img src="images/earphones.png" class="img-fluid" id="earphones">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center box">
-                        <h3>Cool model 3</h3>
-                        <img src="images/earphones.png" class="img-fluid" id="earphones">
-                    </div>
-                </div>
-            </div>
-            `,
-    };
+        'TVs': getCategoryTemplate(categories['TV']),
+        'Smartphones': getCategoryTemplate(categories['Smartphone']),
+        'Tablets': getCategoryTemplate(categories['Tablets']),
+        'Laptops': getCategoryTemplate(categories['Laptops']),
+        'Monitors': getCategoryTemplate(categories['Monitors']),
+        'Earphones': getCategoryTemplate(categories['Earphones'])
+    }
 
     document.querySelector(".home").innerHTML = categoryContent[category];
 
