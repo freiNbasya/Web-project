@@ -88,3 +88,4 @@ const showCategory = (category) => {
     document.querySelector(".home").appendChild(back);
 };
 
+module.exports = { showCategory };
